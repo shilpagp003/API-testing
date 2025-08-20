@@ -1,8 +1,7 @@
 import { test, expect, request } from '@playwright/test';
 
-test('DELETE /api/users/2', async () => {
-  const apiContext = await request.newContext();
-
-  const response = await apiContext.delete('https://reqres.in/api/users/2');
-  expect(response.status()).toBe(204); // No Content
-});
+test('DELETE METHOD',async()=>{
+  const apiContext=await request.newContext()
+  const res=await apiContext.delete('https://restful-booker.herokuapp.com/booking/67',{headers:{Authorization: 'Basic YWRtaW46cGFzc3dvcmQxMjM='}})
+  expect(res.status()).toBe(201);
+})
